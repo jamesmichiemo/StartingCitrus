@@ -14,6 +14,10 @@ package
 			setUpStarling(true);
 			
 			state = new StarlingDemoGameState();
+			
+			// step:7 add sound
+			//sound.addSound("Hurt", "../sounds/hurt.mp3");
+			//sound.addSound("Kill", "../sounds/kill.mp3");
 		}
 	}
 }
