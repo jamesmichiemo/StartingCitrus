@@ -12,6 +12,8 @@ package
 		public function Main()
 		{
 			setUpStarling(true);
+			
+			state = new StarlingDemoGameState();
 		}
 	}
 }
