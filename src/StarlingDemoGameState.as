@@ -33,24 +33,54 @@ package
 			box2D.visible = true;
 			add(box2D);
 			
-			add(new Platform("bottom", {x:350, y:stage.stageHeight-50, height:100, width:700}));
-			add(new Platform("water", {x:stage.stageWidth / 2, y:stage.stageHeight, width:100000}));
+			// the room with no cieling
+			add(new Platform("water", {x:stage.stageWidth / 2, y:stage.stageHeight + 16, width:100000}));
 			add(new Platform("port", {x:0, y:250, height:2000, width:100}));
-			add(new Platform("cloud", {x:250, y:250, width:170, oneWay:true}));
+			add(new Platform("starboard", {x:7000, y:250, height:2000, width:100}));
+			
+			
+			add(new Platform("floor1a", {x:350, y:stage.stageHeight-50, height:100, width:700}));	
+			add(new Platform("floor1b", {x:1155, y:stage.stageHeight-50, height:100, width:500}));
+			add(new Platform("floor1c", {x:2255, y:stage.stageHeight-50, height:100, width:600}));
+			add(new Platform("floor1d", {x:2655, y:stage.stageHeight-100, height:200, width:200}));
+			add(new Platform("floor1e", {x:3155, y:stage.stageHeight-100, height:400, width:800}));
+			add(new Platform("floor1f", {x:5155, y:stage.stageHeight-50, height:100, width:1500}));
+			add(new Platform("floor1g", {x:5155, y:stage.stageHeight-100, height:200, width:400}));
+			add(new Platform("floor1h", {x:6455, y:stage.stageHeight-50, height:100, width:600}));
+			add(new Platform("floor1i", {x:6855, y:stage.stageHeight-100, height:900, width:300}));
+			
+			 
+			add(new Platform("cloud1", {x:500, y:400, height:100, width:600, oneWay:true}));
+			add(new Platform("cloud2", {x:2500, y:250, height:100, width:300, oneWay:true}));
+			add(new Platform("cloud3", {x:4000, y:stage.stageHeight-50, height:40, width:300, oneWay:true})); 
+			add(new Platform("cloud4", {x:5800, y:400, height:100, width:300, oneWay:true}));
+			add(new Platform("cloud5", {x:6400, y:300, height:100, width:400, oneWay:true}));
 			                                                  // step:5
 			var coin:Coin = new Coin("coin", {x:360, y:500/*, view:"levels/SoundPatchDemo/jewel.png"*/});
 			add(coin);
 			coin.onBeginContact.add(coinTouched);
 			
-			var hero:Hero = new Hero("hero", {x:100, y:350, width:60, height:135});
+			var hero:Hero = new Hero("hero", {x:300, y:350, width:30, height:90});
 			add(hero);
 			hero.onGiveDamage.add(heroAttack);
 			hero.onTakeDamage.add(heroHurt);
 			
-			var enemy:Enemy = new Enemy("enemy", {x:stage.stageWidth - 50, y:350, width:46, height:68, leftBound:20, rightBound:stage.stageWidth - 20});
-			add(enemy);
+			add(new Enemy("enemy1", {x:500, y:350, width:46, height:68, leftBound:5, rightBound:10}));
+			add(new Enemy("enemy2", {x:5300, y:350, width:46, height:68, leftBound:5, rightBound:10}));
+			add(new Enemy("enemy3", {x:6000, y:350, width:46, height:68, leftBound:5, rightBound:10}));
 			
-			var block:Crate = new Crate("crate", {x:400, y:350, width:100, height:100});
+			
+			add(new Crate("crate1", {x:400, y:350, width:100, height:100}));
+			add(new Crate("crate2", {x:200, y:350, width:100, height:100}));
+			add(new Crate("crate3", {x:1100, y:350, width:100, height:100}));
+			add(new Crate("crate4", {x:2200, y:350, width:100, height:100}));
+			add(new Crate("crate5", {x:2600, y:350, width:100, height:100}));
+			add(new Crate("crate6", {x:3100, y:350, width:100, height:100}));
+			add(new Crate("crate7", {x:5000, y:350, width:100, height:100}));
+			add(new Crate("crate8", {x:5100, y:350, width:100, height:100}));
+			add(new Crate("crate9", {x:5500, y:350, width:100, height:100}));
+			add(new Crate("crate10", {x:6400, y:350, width:100, height:100}));
+			
 			
 			
 			
