@@ -4,11 +4,14 @@ package
 	
 	import com.citrusengine.core.CitrusEngine;
 	import com.citrusengine.core.StarlingState;
+	import com.citrusengine.math.MathVector;
 	import com.citrusengine.objects.platformer.box2d.Coin;
 	import com.citrusengine.objects.platformer.box2d.Enemy;
 	import com.citrusengine.objects.platformer.box2d.Hero;
 	import com.citrusengine.objects.platformer.box2d.Platform;
 	import com.citrusengine.physics.box2d.Box2D;
+	
+	import flash.geom.Rectangle;
 	
 	public class StarlingDemoGameState extends StarlingState
 	{
@@ -44,6 +47,7 @@ package
 			var enemy:Enemy = new Enemy("enemy", {x:stage.stageWidth - 50, y:350, width:46, height:68, leftBound:20, rightBound:stage.stageWidth - 20});
 			add(enemy);
 			
+			view.setupCamera(hero, new MathVector(stage.stageWidth / 2, stage.stageHeight / 2), new Rectangle(0, 0, 1550, 450), new MathVector(.25, .05));
 			
 			// Step:5 For animations embed art and xml and create an AnimationSequence
 			/*[Embed(source="/../embed/Hero.xml", mimeType="application/octet-stream")]
@@ -78,5 +82,6 @@ package
 		{
 			trace('coin touched by an object');
 		}
+		
 	}
 }
